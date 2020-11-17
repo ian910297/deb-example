@@ -48,28 +48,21 @@ There are four different file now.
 
 Note that: if the command cannot execute correctly, please edit `/etc/apt/source.list` and remove the `#` from the head of `deb-src`  
 
-
 ## [study]
-
+To study deb-series command, you need to understand the directory structure first. Except the debian directory, the rest of files belong to source of hello package. The debian directory is used to control deb-series command.
 
 ## [edit]
+You can use package maintainer scripts to interact with system during runing `apt install`. The rule is a little like git hook script and you should name the file under a specific rule, and they should be `postrm`, `prerm`, `preinst` or`postinst`.
 
-You can use package maintainer scripts to interact with system during runing `apt install`. The rule is a little like git hook script and create a executable file with the specific name, and they are `postrm` `prerm` `preinst` `postinst`.
-
-* debian/postinst
+* debian/postinst  
+  show message during runing `apt install`
 ```shell
 #!/bin/sh
-./testing.sh
-cp ./testing.sh /usr/bin
+echo "this is a test from Chungyi Chi"
 ```
 
-* debian/prerm
-```shell
-#!/bin/sh
-rm -f /usr/bin/testing.sh
-```
-
-* testing.sh
+* testing.sh  
+  If use maintainer scripts to copy testing.sh to `/usr/bin`, you couldn't find the relationship when running `dpkg -S testing.sh`. We maybe should edit `configure`, `Makefile.am`, etc.
 ```shell
 #!/bin/sh
 echo "this is a test from Chungyi Chi"
@@ -77,11 +70,17 @@ echo "this is a test from Chungyi Chi"
 
 To find the package easily, I change the package name.
 * debian/changelog
-```=12
+```
 Package: chungyi-hello
 ```
 
+Before build the package, you need to commit whatever you have edited. Make sure the commit message matchs dep-3
+* command
+```
+* dpkg-source --commit
+```
 
+The following command is used to build a temporary version, if you want to send the debian patch to community. You must need to make a signature with your personal gpg key. In addition to this, remember to edit `debian/changelog`
 * command
 ```
 debuild -uc -us
@@ -90,10 +89,13 @@ debuild -uc -us
 ## [package]
 create a temporary directory `mkdir /tmp/repo/` and add the directory into apt source.list
 
+Note that: copy the deb to `/tmp/repo` in advance
 * command
 ```
 mkdir /tmp/repo
 sudo vim /etc/apt/source.list.d/localhost.list
+cd /tmp/repo
+dpkg-scanpackages -m . | gzip --fast > Packages.gz
 ```
 
 * localhost.d

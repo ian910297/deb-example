@@ -51,6 +51,15 @@ Note that: if the command cannot execute correctly, please edit `/etc/apt/source
 ## [study]
 To study deb-series command, you need to understand the directory structure first. Except the debian directory, the rest of files belong to source of hello package. The debian directory is used to control deb-series command.
 
+* debian/rules  
+  Set variables for makefile files, like CFLAGS, etc.
+* debian/control  
+  Package description/configure file, which is similar to package.json when you develope JS applications.
+* debian/watch  
+  The upstream location  
+
+If you need more information you can read docs([Debian Developers' Manuals](https://www.debian.org/doc/devel-manuals#debmake-doc)) by yourself, I found that it's not really important to this exercise.
+
 ## [edit]
 You can use package maintainer scripts to interact with system during runing `apt install`. The rule is a little like git hook script and you should name the file under a specific rule, and they should be `postrm`, `prerm`, `preinst` or`postinst`.
 
@@ -66,6 +75,12 @@ echo "this is a test from Chungyi Chi"
 ```shell
 #!/bin/sh
 echo "this is a test from Chungyi Chi"
+```
+
+* Makefile.am  
+  Use dist_bin_SCRIPTS to install executable scripts. Note that run configure again
+```
+dist_bin_SCRIPTS = testing.sh
 ```
 
 To find the package easily, I change the package name.
@@ -108,9 +123,41 @@ deb [trusted=yes] file:/tmp/repo ./
 Finally, we finish all the instructions and it's very close to the end.
 
 ```
+demonic@demonic-System-Product-Name[09:16 朝]~/gitPro/deb-example (main)> cp chungyi-hello_2.10-1build3_amd64.deb /tm$
+/repo
+demonic@demonic-System-Product-Name[09:16 朝]~/gitPro/deb-example (main)> cd -
+/tmp/repo
+demonic@demonic-System-Product-Name[09:16 朝]/tmp/repo> dpkg-scanpackages -m . | gzip --fast > Packages.gz
+dpkg-scanpackages: 資訊: Wrote 1 entries to output Packages file.
+demonic@demonic-System-Product-Name[09:16 朝]/tmp/repo> sudo apt update
+下載:1 file:/tmp/repo ./ InRelease
+略過:1 file:/tmp/repo ./ InRelease
+......
+demonic@demonic-System-Product-Name[09:17 朝]/tmp/repo> sudo apt install chungyi-hello
+正在讀取套件清單... 完成
+正在重建相依關係
+正在讀取狀態資料... 完成
+下列套件將會被升級：
+  chungyi-hello
+升級 1 個，新安裝 0 個，移除 0 個，有 13 個未被升級。
+需要下載 0 B/51.3 kB 的套件檔。
+此操作完成之後，會多佔用 1024 B 的磁碟空間。
+下載:1 file:/tmp/repo ./ chungyi-hello 2.10-1build3 [51.3 kB]
+（讀取資料庫 ... 目前共安裝了 211736 個檔案和目錄。）
+準備解開 .../chungyi-hello_2.10-1build3_amd64.deb ...
+Unpacking chungyi-hello (2.10-1build3) over (2.10-1build3) ...
+設定 chungyi-hello (2.10-1build3) ...
+this is a test from Chungyi Chi
+Processing triggers for install-info (6.5.0.dfsg.1-2) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+demonic@demonic-System-Product-Name[09:17 朝]/tmp/repo> testing.sh
+this is a test from Chungyi Chi
+demonic@demonic-System-Product-Name[09:17 朝]/tmp/repo> dpkg -S testing.sh
+chungyi-hello: /usr/bin/testing.sh
 ```
 
 ## Reference
 * [3.4. Creating a local Debian repository](https://blog.heckel.io/2015/10/18/how-to-create-debian-package-and-debian-repository/#Creating-a-local-Debian-repository)
 * [Create your own custom and authenticated APT repository](https://medium.com/sqooba/create-your-own-custom-and-authenticated-apt-repository-1e4a4cf0b864)
 * [Creating-a-local-Debian-repository](https://blog.heckel.io/2015/10/18/how-to-create-debian-package-and-debian-repository/#Creating-a-local-Debian-repository)
+* [9.1 Executable Scripts](https://www.gnu.org/software/automake/manual/automake.html#Scripts)

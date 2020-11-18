@@ -2,16 +2,16 @@
 
 This is a simple example to illustrate how to make a patch for debian package. I would divid the entire process into differe stages. Our goal is to add a shell script into the existing package and execute the script during the process of `apt install`.  
 
-* [download]  
-  get source file
-* [study]  
-  study the standard or conventions of debian community
-* [edit]  
+* download  
+  get source file and know the basic information about debian package
+* edit  
   make a patch
-* [package]  
-  submit to debian or create a private debian repository
+* test  
+  create a private debian repository and test by yourself at localhost
+* publish  
+  submit to launchpad ppa  
 
-## [download]
+## download
 
 use `apt source [package]` to download the source files, and this example is based on [hello](http://www.gnu.org/software/hello/) package.
 
@@ -48,8 +48,7 @@ There are four different file now.
 
 Note that: if the command cannot execute correctly, please edit `/etc/apt/source.list` and remove the `#` from the head of `deb-src`  
 
-## [study]
-To study deb-series command, you need to understand the directory structure first. Except the debian directory, the rest of files belong to source of hello package. The debian directory is used to control deb-series command.
+Let's start from the debian directory. Except the debian directory, the rest of files belong to source of hello package. The debian directory is used to control deb-series command.
 
 * debian/rules  
   Set variables for makefile files, like CFLAGS, etc.
@@ -58,9 +57,9 @@ To study deb-series command, you need to understand the directory structure firs
 * debian/watch  
   The upstream location  
 
-If you need more information you can read docs([Debian Developers' Manuals](https://www.debian.org/doc/devel-manuals#debmake-doc)) by yourself, I found that it's not really important to this exercise.
+If you need more information, please read docs([Debian Developers' Manuals](https://www.debian.org/doc/devel-manuals#debmake-doc)) by yourself, I found that it's not really important to this exercise.
 
-## [edit]
+## edit
 You can use package maintainer scripts to interact with system during runing `apt install`. The rule is a little like git hook script and you should name the file under a specific rule, and they should be `postrm`, `prerm`, `preinst` or`postinst`.
 
 * debian/postinst  
@@ -92,7 +91,7 @@ Package: chungyi-hello
 Before build the package, you need to commit whatever you have edited. Make sure the commit message matchs dep-3
 * command
 ```
-* dpkg-source --commit
+dpkg-source --commit
 ```
 
 The following command is used to build a temporary version, if you want to send the debian patch to community. You must need to make a signature with your personal gpg key. In addition to this, remember to edit `debian/changelog`
@@ -101,7 +100,7 @@ The following command is used to build a temporary version, if you want to send 
 debuild -uc -us
 ```
 
-## [package]
+## test
 create a temporary directory `mkdir /tmp/repo/` and add the directory into apt source.list
 
 Note that: copy the deb to `/tmp/repo` in advance
@@ -156,8 +155,24 @@ demonic@demonic-System-Product-Name[09:17 朝]/tmp/repo> dpkg -S testing.sh
 chungyi-hello: /usr/bin/testing.sh
 ```
 
+## publish
+
+Before you publish your change to your own ppa, you need to have your own gpg key in advance. This is a very good tutorial ([2. Getting Set Up](https://packaging.ubuntu.com/html/getting-set-up.html)), just follow it. If the command execute incorrectly, maybe you can follow this response([Decryption failed: No secret key using GPG](https://stackoverflow.com/a/50557399/10769057))  
+
+After get your own pgp key and upload it to keyserver, the following are the flow of "create a ppa at launchpad"
+* [Create a Launchpad Account.](https://login.launchpad.net/)  
+* Activate a PPA.  
+  Upload your fingerprint(gpg public key) to launchpad, and you would receive a mail with encrypted message. Please copy the meesage to your PC and decrypt with your pricate key. Then, you would get a activate url to confirm the public key at launchpad.
+* Uploading your source packages.
+  Use debuild to generate the release version and dput to upload files according to source.changes
+
+
+
 ## Reference
 * [3.4. Creating a local Debian repository](https://blog.heckel.io/2015/10/18/how-to-create-debian-package-and-debian-repository/#Creating-a-local-Debian-repository)
 * [Create your own custom and authenticated APT repository](https://medium.com/sqooba/create-your-own-custom-and-authenticated-apt-repository-1e4a4cf0b864)
 * [Creating-a-local-Debian-repository](https://blog.heckel.io/2015/10/18/how-to-create-debian-package-and-debian-repository/#Creating-a-local-Debian-repository)
 * [9.1 Executable Scripts](https://www.gnu.org/software/automake/manual/automake.html#Scripts)
+* [2. Getting Set Up](https://packaging.ubuntu.com/html/getting-set-up.html)
+* [How do I create a PPA?](https://askubuntu.com/a/71516)
+

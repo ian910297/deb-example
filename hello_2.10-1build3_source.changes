@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 13 Feb 2020 10:53:55 -0500
+Source: hello
+Binary: chungyi-hello
+Architecture: source
+Version: 2.10-1build3
+Distribution: bionic
+Urgency: medium
+Maintainer: Santiago Vila <sanvila@debian.org>
+Changed-By: Chungyi Chi <demonic@csie.io>
+Description:
+ chungyi-hello - example package based on GNU hello
+Changes:
+ hello (2.10-1build3) bionic; urgency=medium
+ .
+   * Add testing.sh
+Checksums-Sha1:
+ 765b435160b83268700c3835cb0d18e72f7ea795 1401 hello_2.10-1build3.dsc
+ b67113802c9e44218638d3ee34b6042a07bc281d 11344 hello_2.10-1build3.debian.tar.xz
+ c08475ed676fa5a11effb4d154943cbf4b76009e 5933 hello_2.10-1build3_source.buildinfo
+Checksums-Sha256:
+ 615fd195326ce67e79cbb451e6067d2ab45c6f85975a22a1dfa76b755f0d2355 1401 hello_2.10-1build3.dsc
+ bfdd7606b72d985eef44e4cd726b92b1ed51698bfee7ac953b8e33d42ea278a0 11344 hello_2.10-1build3.debian.tar.xz
+ 517d33292af50b73f7480e5b5a879e7e44ece081e13b06d34a2e9018f1a44f14 5933 hello_2.10-1build3_source.buildinfo
+Files:
+ 8c32def0782dc031f338bf25797a310f 1401 devel optional hello_2.10-1build3.dsc
+ 3ec3d75845935ae4dd37742a77803687 11344 devel optional hello_2.10-1build3.debian.tar.xz
+ ce13952e9272348961945d177362304a 5933 devel optional hello_2.10-1build3_source.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFEBAEBCgAuFiEEab9qSgTY9BCPnb/cXhtpQvkrlKgFAl+1LXMQHGRlbW9uaWNA
+Y3NpZS5pbwAKCRBeG2lC+SuUqCnfCADNhnCdVcFMpQGot4viIcK3LHDmLK+ZFgbO
+zz4Mt28k1YEreoSrihWVQwjazaKgU5MpOPYurSXYC9Ujyid0gfa3oB+jsJVKl0an
+bthMGl5AUH7BvG+Wtm7ugIwMqGBqpFB3gbF2T7qscnMvpQ346Su1cIRCBtd2C/CO
+HhiCgzVkgWwZ9h9DXVaKbAQENVkwwhupzUpggWMjSwwTZtF70w5Svqaa0EJNFHrK
+hAD0n55YbnZLYySpc8rCvHNIVeWpnC/yj7Bmb7aMu/8tIAitcLL8c1BG+hBLiP+R
+xfbahQZqz9YXPz6XJ32HU/50g7/p6yzR7wSMqyBnoiH7eroYNnlW
+=C4QI
+-----END PGP SIGNATURE-----

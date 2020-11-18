@@ -1,0 +1,383 @@
+ dpkg-buildpackage -rfakeroot -us -uc -ui -S -sd
+dpkg-buildpackage: 資訊: 源碼套件 hello
+dpkg-buildpackage: 資訊: 源碼版本 2.10-1build3
+dpkg-buildpackage: 資訊: source distribution bionic
+dpkg-buildpackage: 資訊: 源碼變更者： Chungyi Chi <demonic@csie.io>
+ dpkg-source --before-build hello-2.10
+ fakeroot debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/home/demonic/gitPro/deb-example/hello-2.10'
+[ ! -f Makefile ] || /usr/bin/make distclean
+make[2]: Entering directory '/home/demonic/gitPro/deb-example/hello-2.10'
+/bin/bash ./config.status --recheck
+running CONFIG_SHELL=/bin/bash /bin/bash ./configure --no-create --no-recursion
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking whether // is distinct from /... no
+checking whether the preprocessor supports include_next... yes
+checking whether system header files limit the line length... no
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for stdio_ext.h... yes
+checking for getopt.h... yes
+checking for unistd.h... (cached) yes
+checking for sys/mman.h... yes
+checking for sys/socket.h... yes
+checking for wchar.h... yes
+checking for features.h... yes
+checking for wctype.h... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... yes
+checking whether getenv is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking for symlink... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for mbsrtowcs... yes
+checking for mprotect... yes
+checking for _set_invalid_parameter_handler... no
+checking for strndup... yes
+checking for iswcntrl... yes
+checking for working fcntl.h... yes
+checking whether getc_unlocked is declared... yes
+checking whether we are using the GNU C Library >= 2.1 or uClibc... yes
+checking for a sed that does not truncate output... /bin/sed
+checking whether malloc, realloc, calloc are POSIX compliant... yes
+checking for mbstate_t... yes
+checking for a traditional japanese locale... none
+checking for a transitional chinese locale... none
+checking for a french Unicode locale... none
+checking for a traditional french locale... none
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for wchar_t... yes
+checking whether strerror(0) succeeds... yes
+checking for C/C++ restrict keyword... __restrict
+checking whether ffsl is declared without a macro... yes
+checking whether ffsll is declared without a macro... yes
+checking whether memmem is declared without a macro... yes
+checking whether mempcpy is declared without a macro... yes
+checking whether memrchr is declared without a macro... yes
+checking whether rawmemchr is declared without a macro... yes
+checking whether stpcpy is declared without a macro... yes
+checking whether stpncpy is declared without a macro... yes
+checking whether strchrnul is declared without a macro... yes
+checking whether strdup is declared without a macro... yes
+checking whether strncat is declared without a macro... yes
+checking whether strndup is declared without a macro... yes
+checking whether strnlen is declared without a macro... yes
+checking whether strpbrk is declared without a macro... yes
+checking whether strsep is declared without a macro... yes
+checking whether strcasestr is declared without a macro... yes
+checking whether strtok_r is declared without a macro... yes
+checking whether strerror_r is declared without a macro... yes
+checking whether strsignal is declared without a macro... yes
+checking whether strverscmp is declared without a macro... yes
+checking whether strndup is declared... (cached) yes
+checking whether strnlen is declared... (cached) yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for wint_t... yes
+checking whether // is distinct from /... (cached) no
+checking for error_at_line... yes
+checking for __fpending... yes
+checking whether __fpending is declared... yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc works on empty input... yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbsrtowcs works... guessing yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking for ssize_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether dprintf is declared without a macro... yes
+checking whether fpurge is declared without a macro... no
+checking whether fseeko is declared without a macro... yes
+checking whether ftello is declared without a macro... yes
+checking whether getdelim is declared without a macro... yes
+checking whether getline is declared without a macro... yes
+checking whether gets is declared without a macro... no
+checking whether pclose is declared without a macro... yes
+checking whether popen is declared without a macro... yes
+checking whether renameat is declared without a macro... yes
+checking whether snprintf is declared without a macro... yes
+checking whether tmpfile is declared without a macro... yes
+checking whether vdprintf is declared without a macro... yes
+checking whether vsnprintf is declared without a macro... yes
+checking whether _Exit is declared without a macro... yes
+checking whether atoll is declared without a macro... yes
+checking whether canonicalize_file_name is declared without a macro... yes
+checking whether getloadavg is declared without a macro... yes
+checking whether getsubopt is declared without a macro... yes
+checking whether grantpt is declared without a macro... yes
+checking whether initstate is declared without a macro... yes
+checking whether initstate_r is declared without a macro... yes
+checking whether mkdtemp is declared without a macro... yes
+checking whether mkostemp is declared without a macro... yes
+checking whether mkostemps is declared without a macro... yes
+checking whether mkstemp is declared without a macro... yes
+checking whether mkstemps is declared without a macro... yes
+checking whether posix_openpt is declared without a macro... yes
+checking whether ptsname is declared without a macro... yes
+checking whether ptsname_r is declared without a macro... yes
+checking whether random is declared without a macro... yes
+checking whether random_r is declared without a macro... yes
+checking whether realpath is declared without a macro... yes
+checking whether rpmatch is declared without a macro... yes
+checking whether secure_getenv is declared without a macro... yes
+checking whether setenv is declared without a macro... yes
+checking whether setstate is declared without a macro... yes
+checking whether setstate_r is declared without a macro... yes
+checking whether srandom is declared without a macro... yes
+checking whether srandom_r is declared without a macro... yes
+checking whether strtod is declared without a macro... yes
+checking whether strtoll is declared without a macro... yes
+checking whether strtoull is declared without a macro... yes
+checking whether unlockpt is declared without a macro... yes
+checking whether unsetenv is declared without a macro... yes
+checking for working strerror function... yes
+checking for working strndup... yes
+checking for working strnlen... yes
+checking whether chdir is declared without a macro... yes
+checking whether chown is declared without a macro... yes
+checking whether dup is declared without a macro... yes
+checking whether dup2 is declared without a macro... yes
+checking whether dup3 is declared without a macro... yes
+checking whether environ is declared without a macro... yes
+checking whether euidaccess is declared without a macro... yes
+checking whether faccessat is declared without a macro... yes
+checking whether fchdir is declared without a macro... yes
+checking whether fchownat is declared without a macro... yes
+checking whether fdatasync is declared without a macro... yes
+checking whether fsync is declared without a macro... yes
+checking whether ftruncate is declared without a macro... yes
+checking whether getcwd is declared without a macro... yes
+checking whether getdomainname is declared without a macro... yes
+checking whether getdtablesize is declared without a macro... yes
+checking whether getgroups is declared without a macro... yes
+checking whether gethostname is declared without a macro... yes
+checking whether getlogin is declared without a macro... yes
+checking whether getlogin_r is declared without a macro... yes
+checking whether getpagesize is declared without a macro... yes
+checking whether getusershell is declared without a macro... yes
+checking whether setusershell is declared without a macro... yes
+checking whether endusershell is declared without a macro... yes
+checking whether group_member is declared without a macro... yes
+checking whether isatty is declared without a macro... yes
+checking whether lchown is declared without a macro... yes
+checking whether link is declared without a macro... yes
+checking whether linkat is declared without a macro... yes
+checking whether lseek is declared without a macro... yes
+checking whether pipe is declared without a macro... yes
+checking whether pipe2 is declared without a macro... yes
+checking whether pread is declared without a macro... yes
+checking whether pwrite is declared without a macro... yes
+checking whether readlink is declared without a macro... yes
+checking whether readlinkat is declared without a macro... yes
+checking whether rmdir is declared without a macro... yes
+checking whether sethostname is declared without a macro... yes
+checking whether sleep is declared without a macro... yes
+checking whether symlink is declared without a macro... yes
+checking whether symlinkat is declared without a macro... yes
+checking whether ttyname_r is declared without a macro... yes
+checking whether unlink is declared without a macro... yes
+checking whether unlinkat is declared without a macro... yes
+checking whether usleep is declared without a macro... yes
+checking whether btowc is declared without a macro... yes
+checking whether wctob is declared without a macro... yes
+checking whether mbsinit is declared without a macro... yes
+checking whether mbrtowc is declared without a macro... yes
+checking whether mbrlen is declared without a macro... yes
+checking whether mbsrtowcs is declared without a macro... yes
+checking whether mbsnrtowcs is declared without a macro... yes
+checking whether wcrtomb is declared without a macro... yes
+checking whether wcsrtombs is declared without a macro... yes
+checking whether wcsnrtombs is declared without a macro... yes
+checking whether wcwidth is declared without a macro... yes
+checking whether wmemchr is declared without a macro... yes
+checking whether wmemcmp is declared without a macro... yes
+checking whether wmemcpy is declared without a macro... yes
+checking whether wmemmove is declared without a macro... yes
+checking whether wmemset is declared without a macro... yes
+checking whether wcslen is declared without a macro... yes
+checking whether wcsnlen is declared without a macro... yes
+checking whether wcscpy is declared without a macro... yes
+checking whether wcpcpy is declared without a macro... yes
+checking whether wcsncpy is declared without a macro... yes
+checking whether wcpncpy is declared without a macro... yes
+checking whether wcscat is declared without a macro... yes
+checking whether wcsncat is declared without a macro... yes
+checking whether wcscmp is declared without a macro... yes
+checking whether wcsncmp is declared without a macro... yes
+checking whether wcscasecmp is declared without a macro... yes
+checking whether wcsncasecmp is declared without a macro... yes
+checking whether wcscoll is declared without a macro... yes
+checking whether wcsxfrm is declared without a macro... yes
+checking whether wcsdup is declared without a macro... yes
+checking whether wcschr is declared without a macro... yes
+checking whether wcsrchr is declared without a macro... yes
+checking whether wcscspn is declared without a macro... yes
+checking whether wcsspn is declared without a macro... yes
+checking whether wcspbrk is declared without a macro... yes
+checking whether wcsstr is declared without a macro... yes
+checking whether wcstok is declared without a macro... yes
+checking whether wcswidth is declared without a macro... yes
+checking whether iswcntrl works... yes
+checking for towlower... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking whether wctype is declared without a macro... yes
+checking whether iswctype is declared without a macro... yes
+checking whether wctrans is declared without a macro... yes
+checking whether towctrans is declared without a macro... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+ /bin/bash ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+Making distclean in po
+make[3]: Entering directory '/home/demonic/gitPro/deb-example/hello-2.10/po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f stamp-poT
+rm -f core core.* hello.po hello.1po hello.2po *.new.po
+rm -fr *.o
+rm -f Makefile Makefile.in POTFILES *.mo
+make[3]: Leaving directory '/home/demonic/gitPro/deb-example/hello-2.10/po'
+make[3]: Entering directory '/home/demonic/gitPro/deb-example/hello-2.10'
+test -z "doc/hello.dvi doc/hello.pdf doc/hello.ps doc/hello.html" \
+|| rm -rf doc/hello.dvi doc/hello.pdf doc/hello.ps doc/hello.html
+test -z "hello" || rm -f hello
+test -z " lib/configmake.h lib/configmake.h-t lib/charset.alias lib/ref-add.sed lib/ref-del.sed" || rm -f  lib/configmake.h lib/configmake.h-t lib/charset.alias lib/ref-add.sed lib/ref-del.sed
+test -z "lib/libhello.a" || rm -f lib/libhello.a
+rm -rf doc/hello.t2d doc/hello.t2p
+rm -f *.o
+rm -f lib/*.o
+rm -f src/*.o
+test -z "lib/core lib/*.stackdump lib/errno.h lib/errno.h-t lib/getopt.h lib/getopt.h-t lib/arg-nonnull.h lib/arg-nonnull.h-t lib/c++defs.h lib/c++defs.h-t lib/warn-on-use.h lib/warn-on-use.h-t lib/stdbool.h lib/stdbool.h-t lib/stddef.h lib/stddef.h-t lib/stdio.h lib/stdio.h-t lib/stdlib.h lib/stdlib.h-t lib/string.h lib/string.h-t lib/sys/types.h lib/sys/types.h-t lib/unistd.h lib/unistd.h-t lib/wchar.h lib/wchar.h-t lib/wctype.h lib/wctype.h-t" || rm -f lib/core lib/*.stackdump lib/errno.h lib/errno.h-t lib/getopt.h lib/getopt.h-t lib/arg-nonnull.h lib/arg-nonnull.h-t lib/c++defs.h lib/c++defs.h-t lib/warn-on-use.h lib/warn-on-use.h-t lib/stdbool.h lib/stdbool.h-t lib/stddef.h lib/stddef.h-t lib/stdio.h lib/stdio.h-t lib/stdlib.h lib/stdlib.h-t lib/string.h lib/string.h-t lib/sys/types.h lib/sys/types.h-t lib/unistd.h lib/unistd.h-t lib/wchar.h lib/wchar.h-t lib/wctype.h lib/wctype.h-t
+test -z "tests/greeting-1.log tests/greeting-2.log tests/hello-1.log tests/last-1.log tests/traditional-1.log" || rm -f tests/greeting-1.log tests/greeting-2.log tests/hello-1.log tests/last-1.log tests/traditional-1.log
+test -z "tests/greeting-1.trs tests/greeting-2.trs tests/hello-1.trs tests/last-1.trs tests/traditional-1.trs" || rm -f tests/greeting-1.trs tests/greeting-2.trs tests/hello-1.trs tests/last-1.trs tests/traditional-1.trs
+test -z "test-suite.log" || rm -f test-suite.log
+rm -f vti.tmp
+rm -f *.tab.c
+test -z "" || rm -f 
+test . = "." || test -z "" || rm -f 
+rm -f doc/.dirstamp
+rm -f lib/.deps/.dirstamp
+rm -f lib/.dirstamp
+rm -f src/.deps/.dirstamp
+rm -f src/.dirstamp
+rm -f config.h stamp-h1
+test '.' = . || rm -f ./GNUmakefile
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+make[3]: Leaving directory '/home/demonic/gitPro/deb-example/hello-2.10'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -rf lib/.deps src/.deps
+rm -f Makefile
+make[2]: Leaving directory '/home/demonic/gitPro/deb-example/hello-2.10'
+make[1]: Leaving directory '/home/demonic/gitPro/deb-example/hello-2.10'
+   dh_clean
+ dpkg-source -b hello-2.10
+dpkg-source: 資訊: using source format '3.0 (quilt)'
+dpkg-source: 資訊: building hello using existing ./hello_2.10.orig.tar.gz
+dpkg-source: 資訊: building hello in hello_2.10-1build3.debian.tar.xz
+dpkg-source: 資訊: building hello in hello_2.10-1build3.dsc
+ dpkg-genbuildinfo --build=source
+ dpkg-genchanges -sd --build=source >../hello_2.10-1build3_source.changes
+dpkg-genchanges: 資訊: not including original source code in upload
+ dpkg-source --after-build hello-2.10
+dpkg-buildpackage: 資訊: 上傳二進位和差異 (diff) (＊不＊包含原始源碼)
+Now running lintian hello_2.10-1build3_source.changes ...
+W: hello source: maintainer-script-lacks-debhelper-token debian/postinst
+E: hello source: latest-debian-changelog-entry-without-new-date
+W: hello source: ancient-standards-version 3.9.6 (released 2014-09-17) (current is 4.1.4)
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile dsc hello_2.10-1build3.dsc Chungyi Chi <demonic@csie.io>
+
+ fixup_buildinfo hello_2.10-1build3.dsc hello_2.10-1build3_source.buildinfo
+ signfile buildinfo hello_2.10-1build3_source.buildinfo Chungyi Chi <demonic@csie.io>
+
+ fixup_changes dsc hello_2.10-1build3.dsc hello_2.10-1build3_source.changes
+ fixup_changes buildinfo hello_2.10-1build3_source.buildinfo hello_2.10-1build3_source.changes
+ signfile changes hello_2.10-1build3_source.changes Chungyi Chi <demonic@csie.io>
+
+Successfully signed dsc, buildinfo, changes files

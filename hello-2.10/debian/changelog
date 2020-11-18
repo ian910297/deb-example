@@ -1,3 +1,9 @@
+hello (2.10-1build3) bionic; urgency=medium
+
+  * Add testing.sh
+
+ -- Chungyi Chi <demonic@csie.io>  Thu, 13 Feb 2020 10:53:55 -0500
+
 hello (2.10-1build3) bionic-security; urgency=medium
 
   * No-change rebuild for testing purposes.

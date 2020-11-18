@@ -6,7 +6,7 @@ Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9.20120311)
 Homepage: http://www.gnu.org/software/hello/
 
-Package: hello
+Package: chungyi-hello
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: hello-traditional

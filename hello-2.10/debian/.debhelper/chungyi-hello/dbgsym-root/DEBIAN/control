@@ -1,0 +1,13 @@
+Package: chungyi-hello-dbgsym
+Package-Type: ddeb
+Source: hello
+Version: 2.10-1build3
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Santiago Vila <sanvila@debian.org>
+Installed-Size: 47
+Depends: chungyi-hello (= 2.10-1build3)
+Section: debug
+Priority: optional
+Description: debug symbols for chungyi-hello
+Build-Ids: 78c0841e67a6ceec3bed37e4600a02da1dc9a02f

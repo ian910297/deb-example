@@ -36,6 +36,7 @@ EXTRA_DIST = \
 SUBDIRS = po
 
 bin_PROGRAMS = hello
+dist_bin_SCRIPTS = testing.sh
 hello_SOURCES = src/hello.c src/system.h
 
 hello_LDADD = $(LIBINTL) $(top_builddir)/lib/lib$(PACKAGE).a

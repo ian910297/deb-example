@@ -1,6 +1,6 @@
-This is hello.info, produced by makeinfo version 5.2 from hello.texi.
+This is hello.info, produced by makeinfo version 6.5 from hello.texi.
 
-This manual is for GNU Hello (version 2.10, 19 July 2014), which prints
+This manual is for GNU Hello (version , 18 November 2020), which prints
 a friendly greeting (and serves as an example GNU package).
 
    Copyright (C) 1992, 1993, 1996, 2002, 2005-2014 Free Software
@@ -23,7 +23,7 @@ File: hello.info,  Node: Top,  Next: Overview,  Up: (dir)
 GNU Hello
 *********
 
-This manual is for GNU Hello (version 2.10, 19 July 2014), which prints
+This manual is for GNU Hello (version , 18 November 2020), which prints
 a friendly greeting (and serves as an example GNU package).
 
 * Menu:
@@ -725,17 +725,17 @@ Concept index
 * joke, not:                             Overview.             (line 12)
 * King, The:                             Overview.             (line 71)
 * MacKenzie, David:                      Overview.             (line 71)
-* 'Makefile.am' targets:                 Overview.             (line 55)
+* Makefile.am targets:                   Overview.             (line 55)
 * McGrath, Roland:                       Overview.             (line 71)
 * modern:                                Invoking hello.       (line 31)
 * options:                               Invoking hello.       (line  6)
 * overview:                              Overview.             (line  6)
 * patches, contributing:                 Reporting bugs.       (line 25)
 * problems:                              Reporting bugs.       (line  6)
-* 'README-dev' source file:              Overview.             (line 29)
+* README-dev source file:                Overview.             (line 29)
 * reporting bugs:                        Reporting bugs.       (line  6)
 * sample output:                         Sample output.        (line  6)
-* 'srclist-update' script:               Overview.             (line 29)
+* srclist-update script:                 Overview.             (line 29)
 * standards, GNU coding:                 Overview.             (line 17)
 * standards, GNU maintainer:             Overview.             (line 17)
 * Texinfo:                               Overview.             (line 47)

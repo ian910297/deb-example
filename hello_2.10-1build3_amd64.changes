@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Thu, 13 Feb 2020 10:53:55 -0500
+Source: hello
+Binary: chungyi-hello
+Architecture: source amd64
+Version: 2.10-1build3
+Distribution: bionic-security
+Urgency: medium
+Maintainer: Santiago Vila <sanvila@debian.org>
+Changed-By: Marc Deslauriers <marc.deslauriers@ubuntu.com>
+Description:
+ chungyi-hello - example package based on GNU hello
+Changes:
+ hello (2.10-1build3) bionic-security; urgency=medium
+ .
+   * No-change rebuild for testing purposes.
+Checksums-Sha1:
+ d0c1a14c5583277a652012fdefe2eb4b3994a71d 843 hello_2.10-1build3.dsc
+ e10a31007ee9d09e8d70027f792525d237edc0e6 11332 hello_2.10-1build3.debian.tar.xz
+ 98fde0ebbcdb66f51210609f7713cb6106197580 29748 chungyi-hello-dbgsym_2.10-1build3_amd64.ddeb
+ c5a84384a87db6ee20ac5dbf06aa3bd35c01739a 51200 chungyi-hello_2.10-1build3_amd64.deb
+ 2839c47725397a1235e79f951af1c7028038388d 5944 hello_2.10-1build3_amd64.buildinfo
+Checksums-Sha256:
+ 8f20f0bff501af058bb68dc8d5a3b6fbe1e6ac603cb27331f0a7f9b7ff44ff66 843 hello_2.10-1build3.dsc
+ 6c4cf7964141c2a3433f5ae07fe2652f6bc97ded6c8ee8e8491d0263d772f09b 11332 hello_2.10-1build3.debian.tar.xz
+ 37945fda041c47c245d777d4e6303710fd9e2b2dad75d66b1e1d1a9dc8a82635 29748 chungyi-hello-dbgsym_2.10-1build3_amd64.ddeb
+ 2fa3cf9a1c17bf0c960245b7cc5ed0a6940cb81dc8b480b0c7e4bdc3fdf481eb 51200 chungyi-hello_2.10-1build3_amd64.deb
+ 85062e1e19f54577d34f826f4565f5fb809bfccd23ea91fe6ce8e6a1ceee499d 5944 hello_2.10-1build3_amd64.buildinfo
+Files:
+ 98d1238972b0434f4089b164017e58bd 843 devel optional hello_2.10-1build3.dsc
+ 521b60eef5978d2bcd44144ab540a905 11332 devel optional hello_2.10-1build3.debian.tar.xz
+ a310b2da4b8c1321a0f689dbf8d8c285 29748 debug optional chungyi-hello-dbgsym_2.10-1build3_amd64.ddeb
+ e11fb0d03580e58021141b500bb4987c 51200 devel optional chungyi-hello_2.10-1build3_amd64.deb
+ ec8bef742c61f345bb7df6a3b1b2f986 5944 devel optional hello_2.10-1build3_amd64.buildinfo

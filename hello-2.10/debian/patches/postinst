@@ -1,0 +1,79 @@
+Description: Add postinst
+Author: Chungyi Chi <demonic@csie.io>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2020-11-18
+
+--- hello-2.10.orig/doc/hello.info
++++ hello-2.10/doc/hello.info
+@@ -1,6 +1,6 @@
+-This is hello.info, produced by makeinfo version 5.2 from hello.texi.
++This is hello.info, produced by makeinfo version 6.5 from hello.texi.
+ 
+-This manual is for GNU Hello (version 2.10, 19 July 2014), which prints
++This manual is for GNU Hello (version , 18 November 2020), which prints
+ a friendly greeting (and serves as an example GNU package).
+ 
+    Copyright (C) 1992, 1993, 1996, 2002, 2005-2014 Free Software
+@@ -23,7 +23,7 @@ File: hello.info,  Node: Top,  Next: Ove
+ GNU Hello
+ *********
+ 
+-This manual is for GNU Hello (version 2.10, 19 July 2014), which prints
++This manual is for GNU Hello (version , 18 November 2020), which prints
+ a friendly greeting (and serves as an example GNU package).
+ 
+ * Menu:
+@@ -725,17 +725,17 @@ Concept index
+ * joke, not:                             Overview.             (line 12)
+ * King, The:                             Overview.             (line 71)
+ * MacKenzie, David:                      Overview.             (line 71)
+-* 'Makefile.am' targets:                 Overview.             (line 55)
++* Makefile.am targets:                   Overview.             (line 55)
+ * McGrath, Roland:                       Overview.             (line 71)
+ * modern:                                Invoking hello.       (line 31)
+ * options:                               Invoking hello.       (line  6)
+ * overview:                              Overview.             (line  6)
+ * patches, contributing:                 Reporting bugs.       (line 25)
+ * problems:                              Reporting bugs.       (line  6)
+-* 'README-dev' source file:              Overview.             (line 29)
++* README-dev source file:                Overview.             (line 29)
+ * reporting bugs:                        Reporting bugs.       (line  6)
+ * sample output:                         Sample output.        (line  6)
+-* 'srclist-update' script:               Overview.             (line 29)
++* srclist-update script:                 Overview.             (line 29)
+ * standards, GNU coding:                 Overview.             (line 17)
+ * standards, GNU maintainer:             Overview.             (line 17)
+ * Texinfo:                               Overview.             (line 47)
+--- hello-2.10.orig/doc/stamp-vti
++++ hello-2.10/doc/stamp-vti
+@@ -1,4 +1,4 @@
+-@set UPDATED 19 July 2014
+-@set UPDATED-MONTH July 2014
+-@set EDITION 2.10
+-@set VERSION 2.10
++@set UPDATED 18 November 2020
++@set UPDATED-MONTH November 2020
++@set EDITION 
++@set VERSION 
+--- hello-2.10.orig/doc/version.texi
++++ hello-2.10/doc/version.texi
+@@ -1,4 +1,4 @@
+-@set UPDATED 19 July 2014
+-@set UPDATED-MONTH July 2014
+-@set EDITION 2.10
+-@set VERSION 2.10
++@set UPDATED 18 November 2020
++@set UPDATED-MONTH November 2020
++@set EDITION 
++@set VERSION 

@@ -1,0 +1,31 @@
+Description: Add executable testing.sh
+Author: Chungyi Chi <demonic@csie.io>
+Last-Update: 2020-11-18
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+
+--- hello-2.10.orig/Makefile.am
++++ hello-2.10/Makefile.am
+@@ -36,6 +36,7 @@ EXTRA_DIST = \
+ SUBDIRS = po
+ 
+ bin_PROGRAMS = hello
++dist_bin_SCRIPTS = testing.sh
+ hello_SOURCES = src/hello.c src/system.h
+ 
+ hello_LDADD = $(LIBINTL) $(top_builddir)/lib/lib$(PACKAGE).a
+--- /dev/null
++++ hello-2.10/testing.sh
+@@ -0,0 +1,2 @@
++#!/bin/sh
++echo "this is a test from Chungyi Chi"

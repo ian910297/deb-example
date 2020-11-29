@@ -1,6 +1,6 @@
 # deb-example
 
-This is a simple example to illustrate how to make a patch for debian package. I would divid the entire process into differe stages. Our goal is to add a shell script into the existing package and execute the script during the process of `apt install`.  Then, publish the package on personal launchpad ppa.
+This is a simple example to illustrate how to make a patch for debian package. I would divid the entire process into differe stages. Our goal is to add a shell script into the existing package and echo "Hello" during the process of `apt install`.  Then, publish the package on personal launchpad ppa.
 
 * [Download](#Download)  
   get source file and know the basic information about debian package
@@ -212,12 +212,12 @@ hello_2.10-1build3_amd64.build                hello_2.10-1build3.dsc            
 Finally, we finish all the instructions and it's very close to the end. Use dput to upload `hello_2.10-1build3_source.changes`. Note that: you must have activiated your ppa.
 
 * Add ppa to install chungyi-hello  
-  I don't know what's wrong with https. It only works via http now. Maybe I could fix it in few days.
+  I don't know what's wrong with https but it works correctly now~ I think that the http/https use different database to look up the key, so it should take some time to synchornize!?
 ```
 demonic@demonic-System-Product-Name[10:25 暮]~/gitPro/deb-example (main)> sudo add-apt-repository ppa:pcsquare/ppa -k http://keyserver.ubuntu.com
 ```
 
-* result
+* result ([ppa:pcsquare/ppa](https://launchpad.net/~pcsquare/+archive/ubuntu/ppa))
 ```
 demonic@demonic-System-Product-Name[10:29 暮]~/gitPro/deb-example (main)> sudo apt install chungyi-hello 
 正在讀取套件清單... 完成
